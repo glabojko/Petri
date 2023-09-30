@@ -35,15 +35,17 @@ namespace Petri
 
             for (int i = 0; i < 2; i++)
             {
-                int newX = Xcoordinate + random.Next(-Nearby, Nearby + 1);
-                int newY = Ycoordinate - random.Next(-Nearby, Nearby + 1);
+                //int newX = Xcoordinate + random.Next(-Nearby, Nearby + 1);
+                //int newY = Ycoordinate - random.Next(-Nearby, Nearby + 1);
+                int newX = Xcoordinate + 1;
+                int newY = Ycoordinate - 1;
                 newLifeForms.Add(CreateNewInstance(newX, newY));
             }
 
             return newLifeForms;
         }
 
-        protected abstract LifeForm CreateNewInstance(int x, int y);
+        protected abstract LifeForm CreateNewInstance(int xcoordinate, int ycoordinate);
 
     }
 }

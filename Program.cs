@@ -8,8 +8,10 @@
             {
                 
                 lifeForms.Add(new Bacillus(3, 5));
-                lifeForms.Add(new Coccus(2, 4));
-                lifeForms.Add(new Spirillum(1, 1));
+                // lifeForms.Add(new Bacillus(4, 5));
+                lifeForms.Add(new Coccus(3, 4));
+                // lifeForms.Add(new Coccus(3, 4));
+                lifeForms.Add(new Spirillum(2, 3));
 
                 int time = 0;
                 while (true)
@@ -31,15 +33,15 @@
                     }
 
                     
-                    for (int i = 0; i < lifeForms.Count; i++)
-                    {
-                        lifeForms[i].Interact(lifeForms);
-                        if (lifeForms[i].IsDead())
-                        {
-                            lifeForms.RemoveAt(i);
-                            i--;
-                        }
-                    }
+                    //for (int i = 0; i < lifeForms.Count; i++)
+                    //{
+                    //    lifeForms[i].Interact(lifeForms);
+                    //    if (lifeForms[i].IsDead())
+                    //    {
+                    //        lifeForms.RemoveAt(i);
+                    //        i--;
+                    //    }
+                    //}
 
                     
                     System.Threading.Thread.Sleep(1000);
