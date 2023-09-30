@@ -6,9 +6,26 @@ using System.Threading.Tasks;
 
 namespace Petri
 {
-    internal class Bacillus
+    class Bacillus : LifeForm
     {
-        int LifeSpan { get; set; } = 10;
-        int Nearby { get; set; } = 3;
+        public Bacillus(int x, int y) : base(x, y, 'B', 10, 3)
+        {
+        }
+
+        protected override LifeForm CreateNewInstance(int xcoordinate, int ycoordinate)
+        {
+            return new Bacillus(xcoordinate, ycoordinate);
+        }
+
+        public override void Interact(List<LifeForm> lifeForms)
+        {
+            
+            if (!lifeForms.Any(lf => lf is Coccus && Math.Abs(lf.Xcoordinate - Xcoordinate) <= Nearby && Math.Abs(lf.Ycoordinate - Ycoordinate) <= Nearby))
+            {
+                LifeSpan = 0; 
+            }
+        }
     }
+
+
 }
